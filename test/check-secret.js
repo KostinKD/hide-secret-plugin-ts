@@ -59,7 +59,6 @@ test('Redact sensitive words with "prefix" mode with empty customPrefix', (t) =>
     hello: { nopass: '123', password: '123', secret_api: '123' }
   }
 
-
   t.throws(() => {
     redactSensitiveWords(objToRedact, { mode: 'prefix' })
   }, 'Custom prefix must be provided when using mode "prefix" and cannot be an empty string')
