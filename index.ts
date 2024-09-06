@@ -29,7 +29,7 @@ interface Options {
   mode: 'strict' | 'prefix'
   onlyStringReplace?: boolean
   replacement?: string
-  customPrefix?: string
+  customPrefix?: string[]
 }
 
 interface MyObjectType {
@@ -48,11 +48,11 @@ export default function redactSensitiveWords (obj: MyObjectType, opts: Options =
     mode,
     onlyStringReplace = true,
     replacement = '[SECRET]',
-    customPrefix = ''
+    customPrefix = ['']
   } = opts
 
-  if (mode === 'prefix' && customPrefix.length === 0) {
-    throw new Error('Custom prefix must be provided when using mode "prefix"')
+  if (mode === 'prefix' && (customPrefix.length <= 0 || customPrefix.some(prefix => prefix.trim() === ''))) {
+    throw new Error('Custom prefix must be provided when using mode "prefix" and cannot be an empty string')
   }
 
   function traverseObject (obj: MyObjectType, path: string[]): void {
@@ -71,11 +71,13 @@ export default function redactSensitiveWords (obj: MyObjectType, opts: Options =
             }
             break
           case 'prefix':
-            if (customPrefix.length !== 0 && badWords.some(word => key.startsWith(customPrefix))) {
-              if (typeof obj[key] === 'string') {
-                obj[key] = replaceString(obj[key], replacement)
+            Object.keys(obj).forEach(key => {
+              if (customPrefix.some(prefix => key.startsWith(prefix))) {
+                if (typeof obj[key] === 'string') {
+                  obj[key] = replaceString(obj[key], replacement)
+                }
               }
-            }
+            })
             break
           default:
             break
@@ -102,3 +104,17 @@ export default function redactSensitiveWords (obj: MyObjectType, opts: Options =
 function replaceString (str: string, replacement: string): string {
   return replacement
 }
+
+
+const objToRedact = {
+  password: '123456',
+  pass: 123456,
+  secret_key: 'abc123',
+  card: '1234 5678 9012 3456',
+  passport: '123',
+  PASS_KEY: '123',
+  hello: { nopass: '123', password: '123', secret_api: '123' }
+}
+
+const redactedObj = redactSensitiveWords(objToRedact, { mode: 'prefix', customPrefix: ['PASS', 'pass'] })
+console.log(redactedObj)
