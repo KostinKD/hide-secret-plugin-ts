@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "allowJs": true,
+        "target": "ES2022",
+        "useDefineForClassFields": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "strict": true,
+        "jsx": "preserve",
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "lib": ["ES2020", "dom"],
+        "skipLibCheck": true,
+        "baseUrl": "../../../Downloads/hide-secret-plugin-ts-main",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "hide-secret-plugin-ts",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "pretestts": "ts-standard --fix",
+    "test": "tap test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "release": "standard-version"
+  },
+  "author": "Daniil Kostin <omroners@gmail.com>",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "coveralls-next": "^4.2.1",
+    "standard-version": "^9.5.0",
+    "tap": "^21.0.1",
+    "ts-standard": "^12.0.2"
+  }
+}
