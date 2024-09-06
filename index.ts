@@ -104,17 +104,3 @@ export default function redactSensitiveWords (obj: MyObjectType, opts: Options =
 function replaceString (str: string, replacement: string): string {
   return replacement
 }
-
-
-const objToRedact = {
-  password: '123456',
-  pass: 123456,
-  secret_key: 'abc123',
-  card: '1234 5678 9012 3456',
-  passport: '123',
-  PASS_KEY: '123',
-  hello: { nopass: '123', password: '123', secret_api: '123' }
-}
-
-const redactedObj = redactSensitiveWords(objToRedact, { mode: 'prefix', customPrefix: ['PASS', 'pass'] })
-console.log(redactedObj)
