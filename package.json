@@ -1,11 +1,11 @@
 {
   "name": "hide-secret-plugin-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
     "standar": "standard",
-    "pretestts": "ts-standard --project ./tsconfig.json",
+    "pretestts": "ts-standard",
     "test": "tap test",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "release": "standard-version"
