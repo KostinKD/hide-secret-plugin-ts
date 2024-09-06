@@ -1,9 +1,6 @@
 # hide-secret-plugin-ts
 [![Coverage Status](https://coveralls.io/repos/github/KostinKD/hide-secret-plugin-ts/badge.svg?branch=master)](https://coveralls.io/github/KostinKD/hide-secret-plugin-ts?branch=master)
 
-
-Sure! Here’s a simple README documentation based on the provided code. 📜
-
 ---
 
 # Sensitive Word Redactor
