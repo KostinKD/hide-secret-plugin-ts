@@ -49,6 +49,30 @@ test('Redact sensitive words with "prefix" mode', (t) => {
   t.end()
 })
 
+test('Redact sensitive words with "prefix" mode and replace number', (t) => {
+  const objToRedact = {
+    password: '123456',
+    pass: 123456,
+    secret_key: 'abc123',
+    card: '1234 5678 9012 3456',
+    passport: '123',
+    hello: { nopass: '123', password: '123', secret_api: '123' }
+  }
+
+  const redactedObj = redactSensitiveWords(objToRedact, { mode: 'prefix', customPrefix: ['secret_'], onlyStringReplace: false })
+
+  t.same(redactedObj, {
+      password: '123456',
+      pass: 123456,
+      secret_key: '[SECRET]',
+      card: '1234 5678 9012 3456',
+      passport: '123',
+      hello: { nopass: '123', password: '123', secret_api: '[SECRET]' }
+    }
+  )
+  t.end()
+})
+
 test('Redact sensitive words with "prefix" mode with empty customPrefix', (t) => {
   const objToRedact = {
     password: '123456',

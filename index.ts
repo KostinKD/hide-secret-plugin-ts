@@ -63,19 +63,13 @@ export default function redactSensitiveWords (obj: MyObjectType, opts: Options =
         switch (mode) {
           case 'strict':
             if (badWords.includes(key)) {
-              if (onlyStringReplace && typeof obj[key] === 'string') {
-                obj[key] = replaceString(obj[key], replacement)
-              } else if (!onlyStringReplace) {
-                obj[key] = typeof obj[key] === 'string' ? replaceString(obj[key], replacement) : replacement
-              }
+              replaceValue(obj, key, replacement, onlyStringReplace)
             }
             break
           case 'prefix':
             Object.keys(obj).forEach(key => {
               if (customPrefix.some(prefix => key.startsWith(prefix))) {
-                if (typeof obj[key] === 'string') {
-                  obj[key] = replaceString(obj[key], replacement)
-                }
+                replaceValue(obj, key, replacement, onlyStringReplace)
               }
             })
             break
@@ -95,6 +89,14 @@ export default function redactSensitiveWords (obj: MyObjectType, opts: Options =
   return obj
 }
 
+function replaceValue(obj: MyObjectType, key: string, replacement: string, onlyStringReplace: boolean): void {
+  if (onlyStringReplace && typeof obj[key] === 'string') {
+    obj[key] = replaceString(obj[key], replacement)
+  } else if (!onlyStringReplace) {
+    obj[key] = typeof obj[key] === 'string' ? replaceString(obj[key], replacement) : replacement
+  }
+}
+
 /**
  * Replaces a string with a specified replacement string.
  * @param str The original string to replace.
@@ -104,3 +106,4 @@ export default function redactSensitiveWords (obj: MyObjectType, opts: Options =
 function replaceString (str: string, replacement: string): string {
   return replacement
 }
+
