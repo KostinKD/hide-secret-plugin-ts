@@ -3,4 +3,7 @@ package-lock.json
 tsconfig.eslint.json
 eslint.config.cjs
 tsconfig.json
+coverage
+.vscode
+.idea
 .tap

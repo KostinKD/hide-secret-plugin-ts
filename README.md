@@ -122,12 +122,10 @@ Custom prefix must be provided when using mode "prefix" and cannot be an empty s
 - The replacement process will only affect string values unless `onlyStringReplace` is set to `false` in order to replace all values associated with sensitive keys.
 - The module traverses nested objects; sensitive words can be redacted from any level of the object.
 
-[//]: # (## License)
+## License
 
-[//]: # ()
-[//]: # (This project is licensed under the MIT License - see the [LICENSE]&#40;LICENSE&#41; file for details.)
 
-[//]: # ()
-[//]: # (---)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-[//]: # (Feel free to adjust any sections to better suit your project’s branding or specific use cases! 😊)
+
+---
