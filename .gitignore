@@ -1,4 +1,6 @@
 node_modules
 package-lock.json
 tsconfig.eslint.json
+eslint.config.cjs
+tsconfig.json
 .tap
