@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/KostinKD/hide-secret-plugin-ts/compare/v1.0.4...v1.1.0) (2024-09-09)
+
+
+### Features
+
+* add README.md ([3ead6fd](https://github.com/KostinKD/hide-secret-plugin-ts/commit/3ead6fd76e8a2a623a7c5cd5ba6ab055750adf98))
+* fix README.md ([f837a29](https://github.com/KostinKD/hide-secret-plugin-ts/commit/f837a2909394d6ee3c33f36459fe90720c4ffbe2))
+
+
+### Bug Fixes
+
+* add replace number to prefix mode ([93abb7f](https://github.com/KostinKD/hide-secret-plugin-ts/commit/93abb7f19c44933950704aaa02ee5d7204facdf6))
+
 ### [1.0.4](https://github.com/KostinKD/hide-secret-plugin-ts/compare/v1.0.3...v1.0.4) (2024-09-06)
 
 
