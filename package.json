@@ -1,6 +1,6 @@
 {
   "name": "hide-secret-plugin-ts",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
@@ -11,8 +11,26 @@
     "release": "standard-version"
   },
   "author": "Daniil Kostin <omroners@gmail.com>",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
+  "description": "This module provides functionality to redact sensitive words from JavaScript objects. It allows for configuration options that dictate how and when redaction occurs.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KostinKD/hide-secret-plugin-ts"
+  },
+  "bugs": {
+    "url": "https://github.com/KostinKD/hide-secret-plugin-ts/issues"
+  },
+  "homepage": "https://github.com/KostinKD/hide-secret-plugin-ts#readme",
+  "keywords": [
+    "hide",
+    "secret",
+    "plugin",
+    "hide-secret",
+    "hide-password",
+    "hide-key",
+    "hide-object",
+    "password"
+  ],
   "devDependencies": {
     "coveralls-next": "^4.2.1",
     "eslint-config-love": "^63.0.0",

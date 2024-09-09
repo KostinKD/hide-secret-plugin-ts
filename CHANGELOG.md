@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/KostinKD/hide-secret-plugin-ts/compare/v1.2.0...v1.3.0) (2024-09-09)
+
+
+### Features
+
+* fix README.md ([aeff939](https://github.com/KostinKD/hide-secret-plugin-ts/commit/aeff9395de09f11c71939eb29522c919884d1a0c))
+
 ## [1.2.0](https://github.com/KostinKD/hide-secret-plugin-ts/compare/v1.0.4...v1.2.0) (2024-09-09)
 
 

@@ -89,11 +89,15 @@ export default function redactSensitiveWords (obj: MyObjectType, opts: Options =
   return obj
 }
 
-function replaceValue(obj: MyObjectType, key: string, replacement: string, onlyStringReplace: boolean): void {
+function replaceValue (obj: MyObjectType, key: string, replacement: string, onlyStringReplace: boolean): void {
+  if (obj[key] === null || obj[key] === undefined) {
+    return
+  }
+
   if (onlyStringReplace && typeof obj[key] === 'string') {
     obj[key] = replaceString(obj[key], replacement)
   } else if (!onlyStringReplace) {
-    obj[key] = typeof obj[key] === 'string' ? replaceString(obj[key], replacement) : replacement
+    obj[key] = typeof obj[key] === 'string' ? replaceString(obj[key], replacement) : (replacement ?? obj[key])
   }
 }
 
@@ -106,4 +110,3 @@ function replaceValue(obj: MyObjectType, key: string, replacement: string, onlyS
 function replaceString (str: string, replacement: string): string {
   return replacement
 }
-

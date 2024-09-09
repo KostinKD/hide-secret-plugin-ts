@@ -3,7 +3,7 @@
         "strictNullChecks": true,
         "noImplicitAny": false,
         "allowJs": true,
-        "target": "ES2022",
+        "target": "ESNext",
         "useDefineForClassFields": true,
         "module": "commonjs",
         "moduleResolution": "node",
@@ -13,7 +13,7 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "esModuleInterop": true,
-        "lib": ["ES2020", "dom"],
+        "lib": ["ESNext", "dom"],
         "skipLibCheck": true,
         "baseUrl": "../../../Downloads/hide-secret-plugin-ts-main",
         "paths": {
