@@ -2,7 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/KostinKD/hide-secret-plugin-ts/badge.svg?branch=master)](https://coveralls.io/github/KostinKD/hide-secret-plugin-ts?branch=master)
 
 ---
-# Sensitive Word Redactor
+# Hide sensitive words
 
 This module provides functionality to redact sensitive words from JavaScript objects. It allows for configuration options that dictate how and when redaction occurs.
 
@@ -29,7 +29,7 @@ npm install hide-secret-plugin-ts
 import redactSensitiveWords from 'hide-secret-plugin-ts';
 ```
 
-### Redact Sensitive Words
+### Hide sensitive words
 
 Use the `redactSensitiveWords` function to redact sensitive words from an object.
 
@@ -58,8 +58,8 @@ interface Options {
   ```
 
 - **mode**: Redaction mode. Choose between:
-    - `'strict'`: Redacts exact key matches.
-    - `'prefix'`: Redacts keys that start with specified prefixes.
+  - `'strict'`: Redacts exact key matches.
+  - `'prefix'`: Redacts keys that start with specified prefixes.
 
 - **onlyStringReplace**: If set to `true`, only redacts string values. Default is `true`.
 
