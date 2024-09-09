@@ -2,7 +2,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/KostinKD/hide-secret-plugin-ts/badge.svg?branch=master)](https://coveralls.io/github/KostinKD/hide-secret-plugin-ts?branch=master)
 
 ---
-
 # Sensitive Word Redactor
 
 This module provides functionality to redact sensitive words from JavaScript objects. It allows for configuration options that dictate how and when redaction occurs.
